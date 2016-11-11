@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请点击&quot;开始识别&quot;，开始说话" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EUq-EU-syS">
+                                <rect key="frame" x="27" y="39" width="332" height="360"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyj-0t-sta">
+                                <rect key="frame" x="50" y="487" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="T67-DI-uH6"/>
+                                    <constraint firstAttribute="height" constant="30" id="wg8-05-eIw"/>
+                                </constraints>
+                                <state key="normal" title="开始识别"/>
+                                <connections>
+                                    <action selector="onStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pZN-Ca-7Ze"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihB-dj-Qpw">
+                                <rect key="frame" x="158" y="487" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Osf-5B-wCE"/>
+                                    <constraint firstAttribute="width" constant="88" id="xSl-j7-Cfc"/>
+                                </constraints>
+                                <state key="normal" title="停止识别"/>
+                                <connections>
+                                    <action selector="onStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="73h-Uj-Vnl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpg-hL-5CK">
+                                <rect key="frame" x="63" y="449" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="3Qi-zo-mdy"/>
+                                    <constraint firstAttribute="height" constant="30" id="7M0-pb-7gO"/>
+                                </constraints>
+                                <state key="normal" title="开始录音"/>
+                                <connections>
+                                    <action selector="onStartRecorderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9xZ-Eb-ofn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWB-Op-naV">
+                                <rect key="frame" x="171" y="449" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KWg-yY-3xm"/>
+                                    <constraint firstAttribute="width" constant="62" id="msk-TS-F60"/>
+                                </constraints>
+                                <state key="normal" title="停止录音"/>
+                                <connections>
+                                    <action selector="onStopRecorderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="795-3T-z3S"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="oq6-Pa-pCo">
+                                <rect key="frame" x="76" y="404" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="BEh-Ir-o8Q"/>
+                                    <constraint firstAttribute="width" constant="37" id="EVK-7c-BTH"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MNz-tL-v6I">
+                                <rect key="frame" x="158" y="408.5" width="103" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="cdS-at-1qI"/>
+                                    <constraint firstAttribute="width" constant="103" id="gqw-w0-MrO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="中文"/>
+                                    <segment title="英语"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ihB-dj-Qpw" firstAttribute="centerY" secondItem="uyj-0t-sta" secondAttribute="centerY" id="2mG-Dy-BCj"/>
+                            <constraint firstItem="uyj-0t-sta" firstAttribute="top" secondItem="Mpg-hL-5CK" secondAttribute="bottom" constant="8" id="7J5-kK-xR9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EUq-EU-syS" secondAttribute="trailing" id="7u8-5e-uBY"/>
+                            <constraint firstItem="WWB-Op-naV" firstAttribute="leading" secondItem="Mpg-hL-5CK" secondAttribute="trailing" constant="46" id="Ahm-1f-Zqj"/>
+                            <constraint firstItem="MNz-tL-v6I" firstAttribute="leading" secondItem="oq6-Pa-pCo" secondAttribute="trailing" constant="45" id="IZ8-B6-cNK"/>
+                            <constraint firstItem="WWB-Op-naV" firstAttribute="centerY" secondItem="Mpg-hL-5CK" secondAttribute="centerY" id="MpT-1B-jJj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uyj-0t-sta" secondAttribute="bottom" constant="150" id="Pkd-pC-5U1"/>
+                            <constraint firstItem="Mpg-hL-5CK" firstAttribute="top" secondItem="oq6-Pa-pCo" secondAttribute="bottom" constant="8" id="W9v-Sh-gqt"/>
+                            <constraint firstItem="oq6-Pa-pCo" firstAttribute="centerX" secondItem="Mpg-hL-5CK" secondAttribute="centerX" id="ZIi-JB-m33"/>
+                            <constraint firstItem="EUq-EU-syS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="ZPP-00-agF"/>
+                            <constraint firstItem="ihB-dj-Qpw" firstAttribute="leading" secondItem="uyj-0t-sta" secondAttribute="trailing" constant="20" id="aTj-FW-gUJ"/>
+                            <constraint firstItem="EUq-EU-syS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="cPf-Dg-G8R"/>
+                            <constraint firstItem="MNz-tL-v6I" firstAttribute="centerY" secondItem="oq6-Pa-pCo" secondAttribute="centerY" id="ioA-rg-baS"/>
+                            <constraint firstItem="Mpg-hL-5CK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="jwO-gf-yEF"/>
+                            <constraint firstItem="Mpg-hL-5CK" firstAttribute="top" secondItem="EUq-EU-syS" secondAttribute="bottom" constant="50" id="n0O-BE-ES1"/>
+                            <constraint firstItem="uyj-0t-sta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="uoh-Ie-Pbu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityView" destination="oq6-Pa-pCo" id="wxb-xN-7sL"/>
+                        <outlet property="laungeSegmentControl" destination="MNz-tL-v6I" id="JIr-ah-lQg"/>
+                        <outlet property="resultTextView" destination="EUq-EU-syS" id="F0q-Ln-jIj"/>
+                        <outlet property="stopRecordButton" destination="ihB-dj-Qpw" id="pjz-wh-FoR"/>
+                        <outlet property="strartRecordButton" destination="uyj-0t-sta" id="yV9-KB-gRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-423" y="67"/>
         </scene>
     </scenes>
 </document>

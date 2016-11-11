@@ -13,6 +13,7 @@
 		4BEFE67C1DD5803A00096AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BEFE67A1DD5803A00096AD6 /* Main.storyboard */; };
 		4BEFE67E1DD5803A00096AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BEFE67D1DD5803A00096AD6 /* Assets.xcassets */; };
 		4BEFE6811DD5803A00096AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BEFE67F1DD5803A00096AD6 /* LaunchScreen.storyboard */; };
+		4BEFE68A1DD5805900096AD6 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEFE6891DD5805900096AD6 /* Speech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4BEFE67D1DD5803A00096AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BEFE6801DD5803A00096AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BEFE6821DD5803A00096AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BEFE6891DD5805900096AD6 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BEFE68A1DD5805900096AD6 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				4BEFE6701DD5803A00096AD6 /* TestSpeech */,
 				4BEFE66F1DD5803A00096AD6 /* Products */,
+				4BEFE6881DD5805900096AD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +83,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4BEFE6881DD5805900096AD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BEFE6891DD5805900096AD6 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +122,7 @@
 				TargetAttributes = {
 					4BEFE66D1DD5803A00096AD6 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CPVYDNY4T8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -218,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -259,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -270,7 +283,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CPVYDNY4T8;
 				INFOPLIST_FILE = TestSpeech/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlyWire.TestSpeech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CPVYDNY4T8;
 				INFOPLIST_FILE = TestSpeech/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlyWire.TestSpeech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
